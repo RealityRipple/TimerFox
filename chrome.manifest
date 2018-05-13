@@ -1,0 +1,31 @@
+content	timerfox								chrome/content/
+skin	timerfox		skin						chrome/skin/				application={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+skin	timerfox		skin						chrome/skin/				application={8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}
+skin	timerfox		skin						chrome/skin_sm/				application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+locale	timerfox		bg						chrome/locale/bg/
+locale	timerfox		cs						chrome/locale/cs/
+locale	timerfox		da						chrome/locale/da/
+locale	timerfox		de						chrome/locale/de/
+locale	timerfox		en-GB						chrome/locale/en-GB/
+locale	timerfox		en-US						chrome/locale/en-US/
+locale	timerfox		eo						chrome/locale/eo/
+locale	timerfox		es-ES						chrome/locale/es-ES/
+locale	timerfox		fr						chrome/locale/fr/
+locale	timerfox		hu						chrome/locale/hu/
+locale	timerfox		ko						chrome/locale/ko/
+locale	timerfox		mk						chrome/locale/mk/
+locale	timerfox		nl						chrome/locale/nl/
+locale	timerfox		pl						chrome/locale/pl/
+locale	timerfox		pt-BR						chrome/locale/pt-BR/
+locale	timerfox		ru						chrome/locale/ru/
+locale	timerfox		sr						chrome/locale/sr/
+locale  timerfox		sv-SE						chrome/locale/sv-SE/
+locale	timerfox		tr						chrome/locale/tr/
+locale	timerfox		uk						chrome/locale/uk/
+locale	timerfox		vi						chrome/locale/vi/
+locale	timerfox		zh-CN						chrome/locale/zh-CN/
+locale	timerfox		zh-TW						chrome/locale/zh-TW/
+overlay	chrome://browser/content/browser.xul					chrome://timerfox/content/overlay.xul	application={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+overlay	chrome://browser/content/browser.xul					chrome://timerfox/content/overlay.xul	application={8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}
+overlay chrome://navigator/content/navigator.xul				chrome://timerfox/content/overlaySM.xul	application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+style	chrome://global/content/customizeToolbar.xul				chrome://timerfox/skin/overlay.css

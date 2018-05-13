@@ -1,0 +1,12 @@
+<!ENTITY button.label "Tidur">
+<!ENTITY button.tooltip "Starta tidur">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Tid:">
+<!ENTITY dialog.hour "Timmar.">
+<!ENTITY dialog.minute "Minuter.">
+<!ENTITY dialog.second "Sekunder.">
+<!ENTITY dialog.message "Meddelande:">
+<!ENTITY dialog.tmsg "Meddelande som visas när nedräkningen är slutförd.">
+<!ENTITY dialog.audio "Ljud:">
+<!ENTITY dialog.taud "Ljudfilen som ska spelas upp när nedräkningen är slutförd.">
+<!ENTITY timing.spacer ":">

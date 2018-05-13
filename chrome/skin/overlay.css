@@ -1,0 +1,89 @@
+#timer-button.timer0
+{
+ list-style-image: url(chrome://timerfox/skin/large/Stop.png);
+}
+#timer-button.timer1
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go1.png);
+}
+#timer-button.timer2
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go2.png);
+}
+#timer-button.timer3
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go3.png);
+}
+#timer-button.timer4
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go4.png);
+}
+#timer-button.timer5
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go5.png);
+}
+#timer-button.timer6
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go6.png);
+}
+#timer-button.timer7
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go7.png);
+}
+#timer-button.timer8
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go8.png);
+}
+#timer-button.timer9
+{
+ list-style-image: url(chrome://timerfox/skin/large/Go9.png);
+}
+#timer-button.timerA
+{
+ list-style-image: url(chrome://timerfox/skin/large/Audio.png);
+}
+
+toolbar[iconsize="small"] #timer-button.timer0
+{
+ list-style-image: url(chrome://timerfox/skin/small/Stop.png);
+}
+toolbar[iconsize="small"] #timer-button.timer1
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go1.png);
+}
+toolbar[iconsize="small"] #timer-button.timer2
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go2.png);
+}
+toolbar[iconsize="small"] #timer-button.timer3
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go3.png);
+}
+toolbar[iconsize="small"] #timer-button.timer4
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go4.png);
+}
+toolbar[iconsize="small"] #timer-button.timer5
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go5.png);
+}
+toolbar[iconsize="small"] #timer-button.timer6
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go6.png);
+}
+toolbar[iconsize="small"] #timer-button.timer7
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go7.png);
+}
+toolbar[iconsize="small"] #timer-button.timer8
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go8.png);
+}
+toolbar[iconsize="small"] #timer-button.timer9
+{
+ list-style-image: url(chrome://timerfox/skin/small/Go9.png);
+}
+toolbar[iconsize="small"] #timer-button.timerA
+{
+ list-style-image: url(chrome://timerfox/skin/small/Audio.png);
+}

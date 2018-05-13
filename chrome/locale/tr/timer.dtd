@@ -1,0 +1,12 @@
+<!ENTITY button.label "Zamanlayıcı">
+<!ENTITY button.tooltip "Zamanlayıcıyı Başlat">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Zaman:">
+<!ENTITY dialog.hour "Saat.">
+<!ENTITY dialog.minute "Dakika.">
+<!ENTITY dialog.second "Saniye.">
+<!ENTITY dialog.message "Mesaj:">
+<!ENTITY dialog.tmsg "Bittiğinde gösterilecek mesaj.">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">

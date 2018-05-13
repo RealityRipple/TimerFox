@@ -1,0 +1,12 @@
+<!ENTITY button.label "Тајмер">
+<!ENTITY button.tooltip "Стартувај го Тајмерот">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Време:">
+<!ENTITY dialog.hour "Часа.">
+<!ENTITY dialog.minute "Минути.">
+<!ENTITY dialog.second "Секунди.">
+<!ENTITY dialog.message "Порака:">
+<!ENTITY dialog.tmsg "Порака што ќе се прикажи кога е завршено.">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">

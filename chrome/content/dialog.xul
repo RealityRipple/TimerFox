@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://timerfox/skin/dialog.css" type="text/css"?>
+<!DOCTYPE window[
+ <!ENTITY % timerfoxDTD SYSTEM "chrome://timerfox/locale/timer.dtd" >
+ %timerfoxDTD;
+ <!ENTITY % dialogDTD SYSTEM "chrome://global/locale/dialogOverlay.dtd" >
+ %dialogDTD;
+]>
+<window xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&dialog.title;"
+        onload="com.RealityRipple.TimerFoxDialog.OnLoad();"
+        id="timer-window">
+ <keyset>
+  <key id="close_cmd" keycode="VK_ESCAPE" oncommand="com.RealityRipple.TimerFoxDialog.OnCancel(); window.close();" />
+ </keyset>
+ <script type="application/x-javascript" src="chrome://timerfox/content/dialog.js" />
+ <hbox align="center" pack="center">
+  <label control="hour" value="&dialog.time;" />
+  <textbox id="hour"   tooltiptext="&dialog.hour;"   type="number" min="0" max="23" flex="1" onchange="com.RealityRipple.TimerFoxDialog.OnNumBox();" onkeyup="com.RealityRipple.TimerFoxDialog.OnNumBox();" />
+  <label value="&timing.spacer;" />
+  <textbox id="minute" tooltiptext="&dialog.minute;" type="number" min="0" max="59" flex="1" onchange="com.RealityRipple.TimerFoxDialog.OnNumBox();" onkeyup="com.RealityRipple.TimerFoxDialog.OnNumBox();" />
+  <label value="&timing.spacer;" />
+  <textbox id="second" tooltiptext="&dialog.second;" type="number" min="0" max="59" flex="1" onchange="com.RealityRipple.TimerFoxDialog.OnNumBox();" onkeyup="com.RealityRipple.TimerFoxDialog.OnNumBox();" />
+ </hbox>
+ <vbox flex="1" />
+ <hbox align="center" pack="center">
+  <label control="message" value="&dialog.message;" />
+  <textbox id="message" flex="1" tooltiptext="&dialog.tmsg;" onchange="com.RealityRipple.TimerFoxDialog.OnNumBox();" onkeyup="com.RealityRipple.TimerFoxDialog.OnNumBox();" />
+ </hbox>
+ <vbox flex="1" />
+ <hbox align="center" pack="center">
+  <checkbox id="customAudio" label="&dialog.audio;" oncommand="com.RealityRipple.TimerFoxDialog.OnNumBox();"/>
+  <textbox id="audio" flex="1" tooltiptext="&dialog.taud;" onchange="com.RealityRipple.TimerFoxDialog.OnNumBox();" onkeyup="com.RealityRipple.TimerFoxDialog.OnNumBox();" />
+  <button id="cmdBrowseAudio" label="..." oncommand="com.RealityRipple.TimerFoxDialog.OnAudioBrowse();" style="min-width: 0;"/>
+ </hbox>
+ <vbox flex="1" />
+ <hbox align="right">
+  <button id="cmdOK"     class="dialog-button" icon="accept" label="&okButton.label;"     oncommand="com.RealityRipple.TimerFoxDialog.OnOK(); window.close();" />
+  <button id="cmdCancel" class="dialog-button" icon="cancel" label="&cancelButton.label;" oncommand="com.RealityRipple.TimerFoxDialog.OnCancel(); window.close();" />
+ </hbox>
+</window>

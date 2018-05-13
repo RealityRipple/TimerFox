@@ -1,0 +1,12 @@
+<!ENTITY button.label "Contador">
+<!ENTITY button.tooltip "Iniciar contador">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Tempo:">
+<!ENTITY dialog.hour "Horas.">
+<!ENTITY dialog.minute "Minutos.">
+<!ENTITY dialog.second "Segundos.">
+<!ENTITY dialog.message "Mensagem:">
+<!ENTITY dialog.tmsg "A mensagem a ser exibida quando completar.">
+<!ENTITY dialog.audio "Som:">
+<!ENTITY dialog.taud "O arquivo de som a ser tocado quando completar.">
+<!ENTITY timing.spacer ":">

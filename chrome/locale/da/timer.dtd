@@ -1,0 +1,12 @@
+<!ENTITY button.label "Timer">
+<!ENTITY button.tooltip "Start timer">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Tid:">
+<!ENTITY dialog.hour "Timer.">
+<!ENTITY dialog.minute "Minutter.">
+<!ENTITY dialog.second "Sekunder.">
+<!ENTITY dialog.message "Meddelelse:">
+<!ENTITY dialog.tmsg "Meddelelsen, der vises når tiden er udløbet.">
+<!ENTITY dialog.audio "Lyd:">
+<!ENTITY dialog.taud "Lydfilen, der skal afspilles når tiden er udløbet.">
+<!ENTITY timing.spacer ":">

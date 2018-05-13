@@ -1,0 +1,12 @@
+<!ENTITY button.label "Bấm giờ">
+<!ENTITY button.tooltip "Bắt đầu bấm giờ">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Thời gian:">
+<!ENTITY dialog.hour "Giờ.">
+<!ENTITY dialog.minute "Phút.">
+<!ENTITY dialog.second "Giây.">
+<!ENTITY dialog.message "Thông báo:">
+<!ENTITY dialog.tmsg "Thông báo để hiển thị khi hết giờ.">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">

@@ -1,0 +1,12 @@
+<!ENTITY button.label "Tempomezurilo">
+<!ENTITY button.tooltip "Komencu mezuri la tempon">
+<!ENTITY dialog.title "TimerFox (\&quot;Tajmerfokso\&quot;)">
+<!ENTITY dialog.time "Tempo:">
+<!ENTITY dialog.hour "Horoj.">
+<!ENTITY dialog.minute "Minutoj.">
+<!ENTITY dialog.second "Sekundoj.">
+<!ENTITY dialog.message "La mesaĝo:">
+<!ENTITY dialog.tmsg "La montrenda mesaĝo ĉe la finiĝo.">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">

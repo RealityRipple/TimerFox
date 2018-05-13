@@ -1,0 +1,10 @@
+pref("extensions.{D2E63ECF-1CF8-58EB-BC69-C8E7E482C336}.description", "chrome://timerfox/locale/timerfox.properties");
+pref("extensions.timerfox.hour", 0);
+pref("extensions.timerfox.minute", 0);
+pref("extensions.timerfox.second", 0);
+pref("extensions.timerfox.message", "The countdown is complete!");
+pref("extensions.timerfox.customAudio", false);
+pref("extensions.timerfox.audio", "");
+pref("extensions.timerfox.install", false);
+pref("extensions.timerfox.top", 320);
+pref("extensions.timerfox.left", 240);

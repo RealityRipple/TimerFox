@@ -1,0 +1,12 @@
+<!ENTITY button.label "计时器">
+<!ENTITY button.tooltip "启动计时器">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "时间：">
+<!ENTITY dialog.hour "小时。">
+<!ENTITY dialog.minute "分钟。">
+<!ENTITY dialog.second "秒。">
+<!ENTITY dialog.message "信息：">
+<!ENTITY dialog.tmsg "当完成时显示信息。">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer "：">

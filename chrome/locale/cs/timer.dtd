@@ -1,0 +1,12 @@
+<!ENTITY button.label "Časovač">
+<!ENTITY button.tooltip "Spustit časovač">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Čas:">
+<!ENTITY dialog.hour "hodin">
+<!ENTITY dialog.minute "minut">
+<!ENTITY dialog.second "sekund">
+<!ENTITY dialog.message "Zpráva:">
+<!ENTITY dialog.tmsg "Zpráva zobrazená při ukončení.">
+<!ENTITY dialog.audio "Zvuk:">
+<!ENTITY dialog.taud "Soubor se zvukem přehraným při ukončení.">
+<!ENTITY timing.spacer ":">

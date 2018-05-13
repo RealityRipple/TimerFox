@@ -1,0 +1,12 @@
+<!ENTITY button.label "Одбројавање времена">
+<!ENTITY button.tooltip "Започни одбројавање">
+<!ENTITY dialog.title "Тајмерфокс">
+<!ENTITY dialog.time "Време:">
+<!ENTITY dialog.hour "часова.">
+<!ENTITY dialog.minute "минута.">
+<!ENTITY dialog.second "секунди.">
+<!ENTITY dialog.message "Порука:">
+<!ENTITY dialog.tmsg "Порука која ће бити приказана након завршетка.">
+<!ENTITY dialog.audio "Звук:">
+<!ENTITY dialog.taud "Звук који ће се пуштати након завршавања.">
+<!ENTITY timing.spacer ":">

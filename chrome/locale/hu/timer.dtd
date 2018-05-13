@@ -1,0 +1,12 @@
+<!ENTITY button.label "Időmérő">
+<!ENTITY button.tooltip "Időmérő indítása">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Idő:">
+<!ENTITY dialog.hour "Órák.">
+<!ENTITY dialog.minute "Percek.">
+<!ENTITY dialog.second "Másodpercek.">
+<!ENTITY dialog.message "Üzenet:">
+<!ENTITY dialog.tmsg "Ezt az üzenetet jelenítse meg, ha kész.">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">

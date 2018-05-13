@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://timerfox/skin/overlay.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://timerfox/locale/timer.dtd">
+<overlay id="timerfoxOverlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <script type="application/x-javascript" src="chrome://timerfox/content/overlaySM.js" />
+ <toolbar id="nav-bar">
+  <toolbarbutton id="timer-button" />
+ </toolbar>
+ <toolbarbutton id="timer-button"
+                label="&button.label;"
+                oncommand="com.RealityRipple.TimerFox.ToggleTimer();"
+                tooltiptext="&button.tooltip;"
+                class="toolbarbutton-1 chromeclass-toolbar-additional timer0"
+                removable="true"
+		/>
+</overlay>

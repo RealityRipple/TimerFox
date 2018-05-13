@@ -1,0 +1,12 @@
+<!ENTITY button.label "타이머">
+<!ENTITY button.tooltip "Start Timer">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "시간">
+<!ENTITY dialog.hour "시">
+<!ENTITY dialog.minute "분">
+<!ENTITY dialog.second "초">
+<!ENTITY dialog.message "메시지:">
+<!ENTITY dialog.tmsg "완료 후 표시될 메시지">
+<!ENTITY dialog.audio "Sound:">
+<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY timing.spacer ":">
