@@ -1,0 +1,12 @@
+<!ENTITY button.label "Laikmatis">
+<!ENTITY button.tooltip "Pradėti Laikmatį">
+<!ENTITY dialog.title "TimerFox">
+<!ENTITY dialog.time "Laikas:">
+<!ENTITY dialog.hour "Valandos.">
+<!ENTITY dialog.minute "Minutės.">
+<!ENTITY dialog.second "Sekundės.">
+<!ENTITY dialog.message "Pranešimas:">
+<!ENTITY dialog.tmsg "Užbaigus, bus rodomas šis pranešimas.">
+<!ENTITY dialog.audio "Garsas:">
+<!ENTITY dialog.taud "Užbaigus, bus paleidžiamas garso failas.">
+<!ENTITY timing.spacer ":">

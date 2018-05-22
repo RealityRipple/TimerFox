@@ -13,6 +13,8 @@ locale	timerfox		es-ES						chrome/locale/es-ES/
 locale	timerfox		fr						chrome/locale/fr/
 locale	timerfox		hu						chrome/locale/hu/
 locale	timerfox		ko						chrome/locale/ko/
+locale	timerfox		lt						chrome/locale/lt/
+locale	timerfox		lt-LT						chrome/locale/lt-LT/
 locale	timerfox		mk						chrome/locale/mk/
 locale	timerfox		nl						chrome/locale/nl/
 locale	timerfox		pl						chrome/locale/pl/
