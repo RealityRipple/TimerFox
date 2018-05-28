@@ -7,6 +7,6 @@
 <!ENTITY dialog.second "Secondes">
 <!ENTITY dialog.message "Message :">
 <!ENTITY dialog.tmsg "Le message à afficher le moment venu.">
-<!ENTITY dialog.audio "Sound:">
-<!ENTITY dialog.taud "The sound file to play when complete.">
+<!ENTITY dialog.audio "Son :">
+<!ENTITY dialog.taud "Le signal sonore qu'il faut jouer quand c'est terminé">
 <!ENTITY timing.spacer ":">
