@@ -169,7 +169,7 @@ var TimerFoxSM =
   const kTBItemID = "timer-button";
   var tbElem = document.getElementById(kToolBarID);
   var tbItemElem = document.getElementById(kTBItemID);
-  if (tbElem && tbItemElem)
+  if (tbElem && !tbItemElem)
   {
    var newSet = tbElem.currentSet + "," + kTBItemID;
    tbElem.setAttribute("currentset", newSet);
