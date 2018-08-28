@@ -9,7 +9,7 @@
  </toolbarpalette>
  <toolbarbutton id="timer-button"
                 label="&button.label;"
-                oncommand="com.RealityRipple.TimerFox.ToggleTimer();"
+                oncommand="TimerFox.ToggleTimer();"
                 tooltiptext="&button.tooltip;"
                 class="toolbarbutton-1 chromeclass-toolbar-additional timer0"
 		/>

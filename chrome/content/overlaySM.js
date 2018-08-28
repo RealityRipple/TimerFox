@@ -1,51 +1,42 @@
-if (!window.com) window.com = {};
-if (!window.com.RealityRipple) window.com.RealityRipple = {};
-
-window.com.RealityRipple.TimerFox = function()
+var TimerFoxSM =
 {
- var pub  = {};
- var priv = {};
-
- priv.timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-
- priv.Seconds  = 0;
- priv.Second   = 0;
- priv.TimerID  = 0;
- priv.Message  = 'The countdown is complete!';
- priv.bAudio   = false;
- priv.Audio    = '';
- priv.ToolTip  = '';
- priv.mAPlayer = null;
-
- pub.ToggleTimer = function()
+ _timer: Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer),
+ _Seconds: 0,
+ _Second: 0,
+ _TimerID: 0,
+ _Message: 'The countdown is complete!',
+ _bAudio: false,
+ _sAudio: '',
+ _ToolTip: '',
+ _mAPlayer: null,
+ ToggleTimer: function()
  {
   if (document.getElementById("timer-button").className.indexOf("timer0") > -1)
-   priv.StartTimer();
+   TimerFoxSM._StartTimer();
   else if (document.getElementById("timer-button").className.className.indexOf("timerA") > -1)
   {
-   if (priv.mAPlayer != null && !priv.mAPlayer.ended)
+   if (TimerFoxSM._mAPlayer != null && !TimerFoxSM._mAPlayer.ended)
    {
-    priv.mAPlayer.pause();
-    priv.mAPlayer = null;
+    TimerFoxSM._mAPlayer.pause();
+    TimerFoxSM._mAPlayer = null;
    }
-   priv.SetTimer(0);
-   document.getElementById("timer-button").tooltipText = priv.ToolTip;
+   TimerFoxSM._SetTimer(0);
+   document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
   }
   else
-   priv.StopTimer(true);
- };
-
- priv.StartTimer = function()
+   TimerFoxSM._StopTimer(true);
+ },
+ _StartTimer: function()
  {
-  priv.Second = 0;
+  TimerFoxSM._Second = 0;
   var pImg    = document.getElementById("timer-button");
   var retVals = { dHr:0, dMn:0, dSc:0, sMsg:'', bAud:false, sAud:''};
-  var wnTop   = priv.GetIntPref("top");
+  var wnTop   = TimerFoxSM._GetIntPref("top");
   if ((wnTop > screen.height) || (wnTop < 0))
   {
    wnTop = 320;
   }
-  var wnLeft  = priv.GetIntPref("left");
+  var wnLeft  = TimerFoxSM._GetIntPref("left");
   if ((wnLeft > screen.width) || (wnLeft < 0))
   {
    wnLeft = 240;
@@ -59,49 +50,48 @@ window.com.RealityRipple.TimerFox = function()
   var tHr = parseInt(retVals.dHr * 60 * 60);
   var tMn = parseInt(retVals.dMn * 60);
   var tSc = parseInt(retVals.dSc);
-  priv.Message = retVals.sMsg;
-  priv.bAudio  = retVals.bAud;
-  priv.Audio   = retVals.sAud;
-  priv.Seconds = tHr+tMn+tSc;
-  if (priv.Seconds > 0)
+  TimerFoxSM._Message = retVals.sMsg;
+  TimerFoxSM._bAudio  = retVals.bAud;
+  TimerFoxSM._sAudio  = retVals.sAud;
+  TimerFoxSM._Seconds = tHr+tMn+tSc;
+  if (TimerFoxSM._Seconds > 0)
   {
-   priv.Second = 0;
-   priv.timer.initWithCallback(priv.UpdateTimer, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
-   priv.TimerID = 1;
-   priv.SetTimer(1);
-   priv.ToolTip = pImg.tooltipText;
+   TimerFoxSM._Second = 0;
+   TimerFoxSM._timer.initWithCallback(TimerFoxSM.UpdateTimer, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+   TimerFoxSM._TimerID = 1;
+   TimerFoxSM._SetTimer(1);
+   TimerFoxSM._ToolTip = pImg.tooltipText;
   }
   else
   {
-   priv.ToolTip = pImg.tooltipText;
-   priv.StopTimer(true);
+   TimerFoxSM._ToolTip = pImg.tooltipText;
+   TimerFoxSM._StopTimer(true);
   }
- };
-
- priv.UpdateTimer = 
+ },
+ UpdateTimer:
  {
   notify: function(timer)
   {
-   priv.timer.cancel();
+   TimerFoxSM._timer.cancel();
    var pImg = document.getElementById("timer-button");
-   priv.Second++;
-   var tLeft = priv.Seconds - priv.Second;
+   TimerFoxSM._Second++;
+   var tLeft = TimerFoxSM._Seconds - TimerFoxSM._Second;
    if (tLeft > 0)
    {
-    var pLeft = Math.floor(priv.Second / priv.Seconds * 8 + 1);
-    priv.SetTimer(pLeft);
-    pImg.tooltipText = priv.ConvertTime(priv.Seconds - priv.Second);
-    priv.timer.initWithCallback(priv.UpdateTimer, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+    var pLeft = Math.floor(TimerFoxSM._Second / TimerFoxSM._Seconds * 8 + 1);
+    TimerFoxSM._SetTimer(pLeft);
+    pImg.tooltipText = TimerFoxSM._ConvertTime(TimerFoxSM._Seconds - TimerFoxSM._Second);
+    TimerFoxSM._timer.initWithCallback(TimerFoxSM.UpdateTimer, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
    }
    else
    {
-    priv.SetTimer(9);
+    TimerFoxSM._SetTimer(9);
     var simpleBeep = 0;
     if (typeof Audio == "undefined")
     {
      simpleBeep = 1;
     }
-    if (!priv.bAudio)
+    if (!TimerFoxSM._bAudio)
     {
      simpleBeep = 1;
     }
@@ -109,25 +99,29 @@ window.com.RealityRipple.TimerFox = function()
     {
      try
      {
-      priv.mAPlayer = new Audio(priv.Audio);
-      priv.mAPlayer.onerror = function()
+      TimerFoxSM._mAPlayer = new Audio(TimerFoxSM._sAudio);
+      TimerFoxSM._mAPlayer.onerror = function()
       {
+       TimerFoxSM._SetTimer(0);
+       document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
        var mPlayer = Components.classes["@mozilla.org/sound;1"].createInstance(Components.interfaces.nsISound);
        mPlayer.init;
        mPlayer.beep();
       }
-      priv.SetTimer('A');
+      TimerFoxSM._SetTimer('A');
       document.getElementById("timer-button").tooltipText = decodeURIComponent('%E2%99%AB');
-      priv.mAPlayer.play();
-      priv.mAPlayer.onended = function()
+      TimerFoxSM._mAPlayer.play();
+      TimerFoxSM._mAPlayer.onended = function()
       {
-       priv.SetTimer(0);
-       document.getElementById("timer-button").tooltipText = priv.ToolTip;
-       priv.mAPlayer = null;
+       TimerFoxSM._SetTimer(0);
+       document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
+       TimerFoxSM._mAPlayer = null;
       }
      }
      catch(e)
      {
+      TimerFoxSM._SetTimer(0);
+      document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
       simpleBeep = 1;
      }
     }
@@ -137,42 +131,39 @@ window.com.RealityRipple.TimerFox = function()
      mPlayer.init;
      mPlayer.beep();
     }
-    alert(priv.Message);
+    alert(TimerFoxSM._Message);
     if (simpleBeep == 1)
-     priv.StopTimer(true);
+     TimerFoxSM._StopTimer(true);
     else
-     priv.StopTimer(false);
+     TimerFoxSM._StopTimer(false);
    }
   }
- };
-
- priv.StopTimer = function(resetTimer)
+ },
+ _StopTimer: function(resetTimer)
  {
   var pImg = document.getElementById("timer-button");
-  if(priv.TimerID == 1)
+  if(TimerFoxSM._TimerID == 1)
   {
-   priv.timer.cancel();
-   priv.TimerID = 0;
+   TimerFoxSM._timer.cancel();
+   TimerFoxSM._TimerID = 0;
   }
-  priv.Seconds = 0;
-  priv.Second = 0;
+  TimerFoxSM._Seconds = 0;
+  TimerFoxSM._Second = 0;
   if (resetTimer)
   {
-   priv.SetTimer(0);
-   pImg.tooltipText = priv.ToolTip;
+   TimerFoxSM._SetTimer(0);
+   pImg.tooltipText = TimerFoxSM._ToolTip;
   }
- };
-
- priv.init = function()
+ },
+ init: function()
  {
-  window.removeEventListener("load", priv.init, false);
-  priv.UpdatePrefs();
-  if (!priv.checkInstalled())
-   setTimeout(priv.addToolbar, 0);
-  setTimeout(priv.runModern, 0);
- };
-
- priv.addToolbar = function()
+  window.removeEventListener("load", TimerFoxSM.init, false);
+  TimerFoxSM._UpdatePrefs();
+  if (!TimerFoxSM._checkInstalled())
+   setTimeout(TimerFoxSM._addToolbar, 0);
+  setTimeout(TimerFoxSM._runModern, 0);
+ },
+ _addToolbar: function()
  {
   const kToolBarID = "nav-bar";
   const kTBItemID = "timer-button";
@@ -190,23 +181,20 @@ window.com.RealityRipple.TimerFox = function()
    }
    catch(e){}
   }
- };
-
- priv.checkInstalled = function()
+ },
+ _checkInstalled: function()
  {
-  var btnInstalled = priv.GetBoolPref("install", false);
+  var btnInstalled = TimerFoxSM._GetBoolPref("install", false);
   if (!btnInstalled)
-   priv.SetBoolPref("install", true);
+   TimerFoxSM._SetBoolPref("install", true);
   return btnInstalled;
- };
-
- priv.runModern = function()
+ },
+ _runModern: function()
  {
-  if (priv.detectModern())
-   priv.appendModern();
- }
-
- priv.detectModern = function()
+  if (TimerFoxSM._detectModern())
+   TimerFoxSM._appendModern();
+ },
+ _detectModern: function()
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   if (prefs.prefHasUserValue("general.skins.selectedSkin"))
@@ -215,16 +203,14 @@ window.com.RealityRipple.TimerFox = function()
     return true;
   }
   return false;
- };
-
- priv.appendModern = function()
+ },
+ _appendModern: function()
  {
   var tbItemElem = document.getElementById("timer-button");
   if (tbItemElem)
    tbItemElem.className += " modern";
- }
-
- priv.ConvertTime = function(lSec)
+ },
+ _ConvertTime: function(lSec)
  {
   var lMin;
   var lHour;
@@ -238,28 +224,25 @@ window.com.RealityRipple.TimerFox = function()
    return (lMin + " m " + lSec + " s ");
   else
    return (lSec + " s");
- };
-
- priv.SetTimer = function(lVal)
+ },
+ _SetTimer: function(lVal)
  {
   document.getElementById("timer-button").className = "toolbarbutton-1 chromeclass-toolbar-additional timer" + lVal;
-  priv.runModern();
- };
-
- priv.UpdatePrefs = function()
+  TimerFoxSM._runModern();
+ },
+ _UpdatePrefs: function()
  {
-  priv.UpdatePref("hour");
-  priv.UpdatePref("minute");
-  priv.UpdatePref("second");
-  priv.UpdatePref("message");
-  priv.UpdatePref("customAudio");
-  priv.UpdatePref("audio");
-  priv.UpdatePref("install");
-  priv.UpdatePref("top");
-  priv.UpdatePref("left");
- }
-
- priv.UpdatePref = function(prefName)
+  TimerFoxSM._UpdatePref("hour");
+  TimerFoxSM._UpdatePref("minute");
+  TimerFoxSM._UpdatePref("second");
+  TimerFoxSM._UpdatePref("message");
+  TimerFoxSM._UpdatePref("customAudio");
+  TimerFoxSM._UpdatePref("audio");
+  TimerFoxSM._UpdatePref("install");
+  TimerFoxSM._UpdatePref("top");
+  TimerFoxSM._UpdatePref("left");
+ },
+ _UpdatePref: function(prefName)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   if (prefs.prefHasUserValue("timerfox." + prefName))
@@ -302,16 +285,14 @@ window.com.RealityRipple.TimerFox = function()
    }
   }
   return false;
- }
-
- priv.SetBoolPref = function(prefName, prefVal)
+ },
+ _SetBoolPref: function(prefName, prefVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
   prefs.setBoolPref(prefName, prefVal);
- };
-
- priv.GetIntPref = function(prefName, defVal)
+ },
+ _GetIntPref: function(prefName, defVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
@@ -323,9 +304,8 @@ window.com.RealityRipple.TimerFox = function()
   {
    return defVal;
   }
- };
-
- priv.GetBoolPref = function(prefName, defVal)
+ },
+ _GetBoolPref: function(prefName, defVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
@@ -337,8 +317,6 @@ window.com.RealityRipple.TimerFox = function()
   {
    return defVal;
   }
- };
-
- window.addEventListener("load", priv.init, false);
- return pub;
-}();
+ }
+};
+window.addEventListener("load", TimerFoxSM.init, false);

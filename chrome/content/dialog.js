@@ -1,12 +1,6 @@
-if (!com) var com = {};
-if (!com.RealityRipple) com.RealityRipple = {};
-
-com.RealityRipple.TimerFoxDialog = function()
+var TimerFoxDialog =
 {
- var pub  = {};
- var priv = {};
-
- priv.GetVar = function(elId)
+ _GetVar: function(elId)
  {
   var dVal = document.getElementById(elId).value;
   if (dVal)
@@ -24,23 +18,21 @@ com.RealityRipple.TimerFoxDialog = function()
   {
    return ("0");
   }
- };
-
- pub.OnNumBox = function()
+ },
+ OnNumBox: function()
  {
   var retVals  = window.arguments[0];
-  retVals.dHr  = priv.GetVar("hour");
-  retVals.dMn  = priv.GetVar("minute");
-  retVals.dSc  = priv.GetVar("second");
+  retVals.dHr  = TimerFoxDialog._GetVar("hour");
+  retVals.dMn  = TimerFoxDialog._GetVar("minute");
+  retVals.dSc  = TimerFoxDialog._GetVar("second");
   retVals.sMsg = document.getElementById("message").value;
   retVals.bAud = document.getElementById("customAudio").checked;
   document.getElementById("audio").disabled = !document.getElementById("customAudio").checked;
   document.getElementById("cmdBrowseAudio").disabled = !document.getElementById("customAudio").checked;
   retVals.sAud = document.getElementById("audio").value;
   document.getElementById("cmdOK").disabled = ((retVals.dHr == 0 && retVals.dMn == 0 && retVals.dSc == 0) || retVals.sMsg == '' || (retVals.bAud && retVals.sAud == ''))
- };
-
- pub.OnAudioBrowse = function()
+ },
+ OnAudioBrowse: function()
  {
   var picker = Components.classes["@mozilla.org/filepicker;1"].createInstance(Components.interfaces.nsIFilePicker);
   var fileLocator = Components.classes["@mozilla.org/file/directory_service;1"].getService(Components.interfaces.nsIProperties);
@@ -51,35 +43,33 @@ com.RealityRipple.TimerFoxDialog = function()
   if (picker.show() != picker.returnCancel)
   {
    document.getElementById("audio").value = picker.fileURL.prePath+picker.fileURL.path;
-   com.RealityRipple.TimerFoxDialog.OnNumBox();
+   TimerFoxDialog.OnNumBox();
   }
- };
-
- pub.OnOK = function()
+ },
+ OnOK: function()
  {
   var retVals  = window.arguments[0];
-  retVals.dHr  = priv.GetVar("hour");
-  retVals.dMn  = priv.GetVar("minute");
-  retVals.dSc  = priv.GetVar("second");  
+  retVals.dHr  = TimerFoxDialog._GetVar("hour");
+  retVals.dMn  = TimerFoxDialog._GetVar("minute");
+  retVals.dSc  = TimerFoxDialog._GetVar("second");  
   retVals.sMsg = document.getElementById("message").value;
   retVals.bAud = document.getElementById("customAudio").checked;
   retVals.sAud = document.getElementById("audio").value;
-  priv.SetIntPref("top", window.screenY);
-  priv.SetIntPref("left", window.screenX);
-  priv.SetIntPref("hour", retVals.dHr);
-  priv.SetIntPref("minute", retVals.dMn);
-  priv.SetIntPref("second", retVals.dSc);
-  priv.SetStrPref("message", retVals.sMsg);
-  priv.SetBoolPref("customAudio", retVals.bAud);
-  priv.SetStrPref("audio", retVals.sAud);
+  TimerFoxDialog._SetIntPref("top", window.screenY);
+  TimerFoxDialog._SetIntPref("left", window.screenX);
+  TimerFoxDialog._SetIntPref("hour", retVals.dHr);
+  TimerFoxDialog._SetIntPref("minute", retVals.dMn);
+  TimerFoxDialog._SetIntPref("second", retVals.dSc);
+  TimerFoxDialog._SetStrPref("message", retVals.sMsg);
+  TimerFoxDialog._SetBoolPref("customAudio", retVals.bAud);
+  TimerFoxDialog._SetStrPref("audio", retVals.sAud);
   return true;
- };
-
- pub.OnCancel = function()
+ },
+ OnCancel: function()
  {
   var retVals  = window.arguments[0];
-  priv.SetIntPref("top", window.screenY);
-  priv.SetIntPref("left", window.screenX);
+  TimerFoxDialog._SetIntPref("top", window.screenY);
+  TimerFoxDialog._SetIntPref("left", window.screenX);
   retVals.dHr  = 0;
   retVals.dMn  = 0;
   retVals.dSc  = 0;
@@ -87,14 +77,13 @@ com.RealityRipple.TimerFoxDialog = function()
   retVals.bAud = 0;
   retVals.sAud = "";
   return true;
- };
-
- pub.OnLoad = function()
+ },
+ OnLoad: function()
  {
-  document.getElementById("hour").value    = priv.GetIntPref("hour", 0);
-  document.getElementById("minute").value  = priv.GetIntPref("minute", 0);
-  document.getElementById("second").value  = priv.GetIntPref("second", 0);
-  document.getElementById("message").value = priv.GetStrPref("message", "The countdown is complete!");
+  document.getElementById("hour").value    = TimerFoxDialog._GetIntPref("hour", 0);
+  document.getElementById("minute").value  = TimerFoxDialog._GetIntPref("minute", 0);
+  document.getElementById("second").value  = TimerFoxDialog._GetIntPref("second", 0);
+  document.getElementById("message").value = TimerFoxDialog._GetStrPref("message", "The countdown is complete!");
   if (typeof Audio == "undefined")
   {
    document.getElementById("customAudio").hidden    = true;
@@ -106,35 +95,31 @@ com.RealityRipple.TimerFoxDialog = function()
    document.getElementById("customAudio").hidden      = false;
    document.getElementById("audio").hidden            = false;
    document.getElementById("cmdBrowseAudio").hidden   = false;
-   document.getElementById("customAudio").checked     = priv.GetBoolPref("customAudio", false);
+   document.getElementById("customAudio").checked     = TimerFoxDialog._GetBoolPref("customAudio", false);
    document.getElementById("audio").disabled          = !document.getElementById("customAudio").checked;
    document.getElementById("cmdBrowseAudio").disabled = !document.getElementById("customAudio").checked;
-   document.getElementById("audio").value             = priv.GetStrPref("audio", "");
+   document.getElementById("audio").value             = TimerFoxDialog._GetStrPref("audio", "");
   }
- };
-
- priv.SetStrPref = function(prefName, prefVal)
+ },
+ _SetStrPref: function(prefName, prefVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
   prefs.setCharPref(prefName, prefVal);
- };
-
- priv.SetIntPref = function(prefName, prefVal)
+ },
+ _SetIntPref: function(prefName, prefVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
   prefs.setIntPref(prefName, prefVal);
- };
-
- priv.SetBoolPref = function(prefName, prefVal)
+ },
+ _SetBoolPref: function(prefName, prefVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
   prefs.setBoolPref(prefName, prefVal);
- };
-
- priv.GetStrPref = function(prefName, defVal)
+ },
+ _GetStrPref: function(prefName, defVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
@@ -146,9 +131,8 @@ com.RealityRipple.TimerFoxDialog = function()
   {
    return defVal;
   }
- };
-
- priv.GetIntPref = function(prefName, defVal)
+ },
+ _GetIntPref: function(prefName, defVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
@@ -160,9 +144,8 @@ com.RealityRipple.TimerFoxDialog = function()
   {
    return defVal;
   }
- };
-
- priv.GetBoolPref = function(prefName, defVal)
+ },
+ _GetBoolPref: function(prefName, defVal)
  {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   prefName = "extensions.timerfox." + prefName;
@@ -174,7 +157,5 @@ com.RealityRipple.TimerFoxDialog = function()
   {
    return defVal;
   }
- };
- 
- return pub;
-}();
+ }
+};
