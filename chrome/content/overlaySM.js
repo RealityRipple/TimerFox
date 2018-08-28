@@ -97,6 +97,16 @@ var TimerFoxSM =
     }
     if (simpleBeep == 0)
     {
+     var autoPlayState = true;
+     var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+     if (prefs.prefHasUserValue("media.autoplay.enabled"))
+     {
+      autoPlayState = prefs.getBoolPref("media.autoplay.enabled");
+      if (autoPlayState == false)
+      {
+       prefs.setBoolPref("media.autoplay.enabled", true);
+      }
+     }
      try
      {
       TimerFoxSM._mAPlayer = new Audio(TimerFoxSM._sAudio);
@@ -123,6 +133,10 @@ var TimerFoxSM =
       TimerFoxSM._SetTimer(0);
       document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
       simpleBeep = 1;
+     }
+     if (autoPlayState == false)
+     {
+      prefs.setBoolPref("media.autoplay.enabled", false);
      }
     }
     if (simpleBeep == 1)
