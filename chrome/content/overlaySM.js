@@ -115,9 +115,9 @@ var TimerFoxSM =
        TimerFoxSM._SetTimer(0);
        document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
        var mPlayer = Components.classes["@mozilla.org/sound;1"].createInstance(Components.interfaces.nsISound);
-       mPlayer.init;
+       mPlayer.init();
        mPlayer.beep();
-      }
+      };
       TimerFoxSM._SetTimer('A');
       document.getElementById("timer-button").tooltipText = decodeURIComponent('%E2%99%AB');
       TimerFoxSM._mAPlayer.play();
@@ -126,7 +126,7 @@ var TimerFoxSM =
        TimerFoxSM._SetTimer(0);
        document.getElementById("timer-button").tooltipText = TimerFoxSM._ToolTip;
        TimerFoxSM._mAPlayer = null;
-      }
+      };
      }
      catch(e)
      {
@@ -142,7 +142,7 @@ var TimerFoxSM =
     if (simpleBeep == 1)
     {
      var mPlayer = Components.classes["@mozilla.org/sound;1"].createInstance(Components.interfaces.nsISound);
-     mPlayer.init;
+     mPlayer.init();
      mPlayer.beep();
     }
     alert(TimerFoxSM._Message);
@@ -261,17 +261,18 @@ var TimerFoxSM =
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   if (prefs.prefHasUserValue("timerfox." + prefName))
   {
-   var prefType = prefs.getPrefType("timerfox." + prefName)
+   var prefType = prefs.getPrefType("timerfox." + prefName);
+   var prefVal;
    if (prefType == prefs.PREF_STRING)
    {
-    var prefVal = prefs.getCharPref("timerfox." + prefName);
+    prefVal = prefs.getCharPref("timerfox." + prefName);
     prefs.setCharPref("extensions.timerfox." + prefName, prefVal);
     prefs.clearUserPref("timerfox." + prefName);
     return true;
    }
    else if (prefType == prefs.PREF_INT)
    {
-    var prefVal = prefs.getIntPref("timerfox." + prefName);
+    prefVal = prefs.getIntPref("timerfox." + prefName);
     if (prefs.getPrefType("extensions.timerfox." + prefName) == prefs.PREF_BOOL)
     {
      if (prefVal == 1)
@@ -292,7 +293,7 @@ var TimerFoxSM =
    }
    else if (prefType == prefs.PREF_BOOL)
    {
-    var prefVal = prefs.getBoolPref("timerfox." + prefName);
+    prefVal = prefs.getBoolPref("timerfox." + prefName);
     prefs.setBoolPref("extensions.timerfox." + prefName, prefVal);
     prefs.clearUserPref("timerfox." + prefName);
     return true;

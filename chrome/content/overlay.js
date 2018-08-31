@@ -238,17 +238,18 @@ var TimerFox =
   var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
   if (prefs.prefHasUserValue("timerfox." + prefName))
   {
-   var prefType = prefs.getPrefType("timerfox." + prefName)
+   var prefType = prefs.getPrefType("timerfox." + prefName);
+   var prefVal;
    if (prefType == prefs.PREF_STRING)
    {
-    var prefVal = prefs.getCharPref("timerfox." + prefName);
+    prefVal = prefs.getCharPref("timerfox." + prefName);
     prefs.setCharPref("extensions.timerfox." + prefName, prefVal);
     prefs.clearUserPref("timerfox." + prefName);
     return true;
    }
    else if (prefType == prefs.PREF_INT)
    {
-    var prefVal = prefs.getIntPref("timerfox." + prefName);
+    prefVal = prefs.getIntPref("timerfox." + prefName);
     if (prefs.getPrefType("extensions.timerfox." + prefName) == prefs.PREF_BOOL)
     {
      if (prefVal == 1)
@@ -269,7 +270,7 @@ var TimerFox =
    }
    else if (prefType == prefs.PREF_BOOL)
    {
-    var prefVal = prefs.getBoolPref("timerfox." + prefName);
+    prefVal = prefs.getBoolPref("timerfox." + prefName);
     prefs.setBoolPref("extensions.timerfox." + prefName, prefVal);
     prefs.clearUserPref("timerfox." + prefName);
     return true;

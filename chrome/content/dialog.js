@@ -30,7 +30,7 @@ var TimerFoxDialog =
   document.getElementById("audio").disabled = !document.getElementById("customAudio").checked;
   document.getElementById("cmdBrowseAudio").disabled = !document.getElementById("customAudio").checked;
   retVals.sAud = document.getElementById("audio").value;
-  document.getElementById("cmdOK").disabled = ((retVals.dHr == 0 && retVals.dMn == 0 && retVals.dSc == 0) || retVals.sMsg == '' || (retVals.bAud && retVals.sAud == ''))
+  document.getElementById("cmdOK").disabled = ((retVals.dHr == 0 && retVals.dMn == 0 && retVals.dSc == 0) || retVals.sMsg == '' || (retVals.bAud && retVals.sAud == ''));
  },
  OnAudioBrowse: function()
  {
