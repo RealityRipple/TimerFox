@@ -1,16 +1,14 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://timerfox/skin/overlay.css" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://timerfox/locale/timer.dtd">
-<overlay id="timerfoxOverlay" 
-         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
- <script type="application/x-javascript" src="chrome://timerfox/content/overlay.js" />
+<overlay id="timerfoxOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <script type="application/x-javascript" src="chrome://timerfox/content/overlay.js"/>
  <toolbarpalette id="BrowserToolbarPalette">
-  <toolbarbutton id="timer-button" />
+  <toolbarbutton id="timer-button"/>
  </toolbarpalette>
  <toolbarbutton id="timer-button"
                 label="&button.label;"
                 oncommand="TimerFox.ToggleTimer();"
                 tooltiptext="&button.tooltip;"
-                class="toolbarbutton-1 chromeclass-toolbar-additional timer0"
-		/>
+                class="toolbarbutton-1 chromeclass-toolbar-additional timer0"/>
 </overlay>

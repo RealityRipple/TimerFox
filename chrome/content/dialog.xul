@@ -2,9 +2,9 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://timerfox/skin/dialog.css" type="text/css"?>
 <!DOCTYPE window[
- <!ENTITY % timerfoxDTD SYSTEM "chrome://timerfox/locale/timer.dtd" >
+ <!ENTITY % timerfoxDTD SYSTEM "chrome://timerfox/locale/timer.dtd">
  %timerfoxDTD;
- <!ENTITY % dialogDTD SYSTEM "chrome://global/locale/dialogOverlay.dtd" >
+ <!ENTITY % dialogDTD SYSTEM "chrome://global/locale/dialogOverlay.dtd">
  %dialogDTD;
 ]>
 <window xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -13,31 +13,31 @@
         onload="TimerFoxDialog.OnLoad();"
         id="timer-window">
  <keyset>
-  <key id="close_cmd" keycode="VK_ESCAPE" oncommand="TimerFoxDialog.OnCancel(); window.close();" />
+  <key id="close_cmd" keycode="VK_ESCAPE" oncommand="TimerFoxDialog.OnCancel(); window.close();"/>
  </keyset>
- <script type="application/x-javascript" src="chrome://timerfox/content/dialog.js" />
+ <script type="application/x-javascript" src="chrome://timerfox/content/dialog.js"/>
  <hbox align="center" pack="center">
-  <label control="hour" value="&dialog.time;" />
-  <textbox id="hour"   tooltiptext="&dialog.hour;"   type="number" min="0" max="23" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();" />
-  <label value="&timing.spacer;" />
-  <textbox id="minute" tooltiptext="&dialog.minute;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();" />
-  <label value="&timing.spacer;" />
-  <textbox id="second" tooltiptext="&dialog.second;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();" />
+  <label control="hour" value="&dialog.time;"/>
+  <textbox id="hour"   tooltiptext="&dialog.hour;"   type="number" min="0" max="23" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+  <label value="&timing.spacer;"/>
+  <textbox id="minute" tooltiptext="&dialog.minute;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+  <label value="&timing.spacer;"/>
+  <textbox id="second" tooltiptext="&dialog.second;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
  </hbox>
- <vbox flex="1" />
+ <vbox flex="1"/>
  <hbox align="center" pack="center">
-  <label control="message" value="&dialog.message;" />
-  <textbox id="message" flex="1" tooltiptext="&dialog.tmsg;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();" />
+  <label control="message" value="&dialog.message;"/>
+  <textbox id="message" flex="1" tooltiptext="&dialog.tmsg;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
  </hbox>
- <vbox flex="1" />
+ <vbox flex="1"/>
  <hbox align="center" pack="center">
   <checkbox id="customAudio" label="&dialog.audio;" oncommand="TimerFoxDialog.OnNumBox();"/>
-  <textbox id="audio" flex="1" tooltiptext="&dialog.taud;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();" />
+  <textbox id="audio" flex="1" tooltiptext="&dialog.taud;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
   <button id="cmdBrowseAudio" label="..." oncommand="TimerFoxDialog.OnAudioBrowse();" style="min-width: 0;"/>
  </hbox>
- <vbox flex="1" />
+ <vbox flex="1"/>
  <hbox align="right">
-  <button id="cmdOK"     class="dialog-button" icon="accept" label="&okButton.label;"     oncommand="TimerFoxDialog.OnOK(); window.close();" />
-  <button id="cmdCancel" class="dialog-button" icon="cancel" label="&cancelButton.label;" oncommand="TimerFoxDialog.OnCancel(); window.close();" />
+  <button id="cmdOK"     class="dialog-button" icon="accept" label="&okButton.label;"     oncommand="TimerFoxDialog.OnOK(); window.close();"/>
+  <button id="cmdCancel" class="dialog-button" icon="cancel" label="&cancelButton.label;" oncommand="TimerFoxDialog.OnCancel(); window.close();"/>
  </hbox>
 </window>
