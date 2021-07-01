@@ -145,7 +145,19 @@ var TimerFox =
      mPlayer.init();
      mPlayer.beep();
     }
-    alert(TimerFox._Message);
+    var svPrompt = null;
+    try
+    {
+     svPrompt = Components.classes['@mozilla.org/embedcomp/prompt-service;1'].getService(Components.interfaces.nsIPromptService);
+    }
+    catch (ex)
+    {
+     svPrompt = null;
+    }
+    if (svPrompt == null)
+     alert(TimerFox._Message);
+    else
+     svPrompt.alert(null, 'TimerFox', TimerFox._Message);
     if (simpleBeep === 1)
      TimerFox._StopTimer(true);
     else
