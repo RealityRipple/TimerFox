@@ -16,26 +16,36 @@
   <key id="close_cmd" keycode="VK_ESCAPE" oncommand="TimerFoxDialog.OnCancel(); window.close();"/>
  </keyset>
  <script type="application/x-javascript" src="chrome://timerfox/content/dialog.js"/>
- <hbox align="center" pack="center">
-  <label control="hour" value="&dialog.time;"/>
-  <textbox id="hour"   tooltiptext="&dialog.hour;"   type="number" min="0" max="23" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
-  <label value="&timing.spacer;"/>
-  <textbox id="minute" tooltiptext="&dialog.minute;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
-  <label value="&timing.spacer;"/>
-  <textbox id="second" tooltiptext="&dialog.second;" type="number" min="0" max="59" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
- </hbox>
- <vbox flex="1"/>
- <hbox align="center" pack="center">
-  <label control="message" value="&dialog.message;"/>
-  <textbox id="message" flex="1" tooltiptext="&dialog.tmsg;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
- </hbox>
- <vbox flex="1"/>
- <hbox align="center" pack="center">
-  <checkbox id="customAudio" label="&dialog.audio;" oncommand="TimerFoxDialog.OnNumBox();"/>
-  <textbox id="audio" flex="1" tooltiptext="&dialog.taud;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
-  <button id="cmdBrowseAudio" label="..." oncommand="TimerFoxDialog.OnAudioBrowse();" style="min-width: 0;"/>
- </hbox>
- <vbox flex="1"/>
+ <grid>
+  <columns>
+   <column />
+   <column flex="1" />
+  </columns>
+  <rows>
+   <row>
+    <label control="hour" value="&dialog.time;"/>
+    <hbox>
+     <textbox id="hour"   tooltiptext="&dialog.hour;"   type="number" min="0" max="23" size="2" flex="1"  onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+     <label value="&timing.spacer;"/>
+     <textbox id="minute" tooltiptext="&dialog.minute;" type="number" min="0" max="59" size="2" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+     <label value="&timing.spacer;"/>
+     <textbox id="second" tooltiptext="&dialog.second;" type="number" min="0" max="59" size="2" flex="1" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+    </hbox>
+   </row>
+   <row>
+    <label control="message" value="&dialog.message;"/>
+    <textbox id="message" flex="1" tooltiptext="&dialog.tmsg;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+   </row>
+   <row>
+    <checkbox id="customAudio" label="&dialog.audio;" oncommand="TimerFoxDialog.OnNumBox();"/>
+    <hbox>
+     <textbox id="audio" flex="1" tooltiptext="&dialog.taud;" onchange="TimerFoxDialog.OnNumBox();" onkeyup="TimerFoxDialog.OnNumBox();"/>
+     <button id="cmdBrowseAudio" label="..." oncommand="TimerFoxDialog.OnAudioBrowse();" style="min-width: 0;"/>
+    </hbox>
+   </row>
+  </rows>
+ </grid>
+ <spacer flex="1" />
  <hbox align="right">
   <button id="cmdOK"     class="dialog-button" icon="accept" label="&okButton.label;"     oncommand="TimerFoxDialog.OnOK(); window.close();"/>
   <button id="cmdCancel" class="dialog-button" icon="cancel" label="&cancelButton.label;" oncommand="TimerFoxDialog.OnCancel(); window.close();"/>

@@ -100,6 +100,7 @@ var TimerFoxDialog =
    document.getElementById('cmdBrowseAudio').disabled = !document.getElementById('customAudio').checked;
    document.getElementById('audio').value             = TimerFoxDialog._GetStrPref('audio', '');
   }
+  setTimeout('window.sizeToContent()', 100);
  },
  _SetStrPref: function(prefName, prefVal)
  {
