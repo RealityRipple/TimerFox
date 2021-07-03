@@ -3,7 +3,7 @@
  <Description about="urn:mozilla:install-manifest">
   <em:name>TimerFox</em:name>
   <em:id>{D2E63ECF-1CF8-58EB-BC69-C8E7E482C336}</em:id>
-  <em:version>2.5</em:version>
+  <em:version>2.6</em:version>
   <em:type>2</em:type>
   <!-- Firefox -->
   <em:targetApplication>
