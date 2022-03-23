@@ -12,6 +12,13 @@
     <em:maxVersion>30.*</em:maxVersion>
    </Description>
   </em:targetApplication>
+  <em:targetApplication>
+   <Description>
+    <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+    <em:minVersion>30.0</em:minVersion>
+    <em:maxVersion>30.*</em:maxVersion>
+   </Description>
+  </em:targetApplication>
   <em:description>Easily counts down from a predefined number and alarms you when the count has reached zero.</em:description>
   <em:homepageURL>https://realityripple.com/Software/XUL/TimerFox/</em:homepageURL>
   <em:updateURL>https://realityripple.com/Software/XUL/TimerFox/update.rdf</em:updateURL>
